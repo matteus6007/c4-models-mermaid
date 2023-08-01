@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# change working directory to root
+cd $(dirname -- "$0")/../
+
+# generate diagrams
+./node_modules/.bin/mmdc -i ./diagrams/diagrams.template.md -o ./docs/diagrams.md
+
+# add updated docs
+git add docs/*

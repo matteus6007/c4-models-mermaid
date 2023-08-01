@@ -1,0 +1,15 @@
+C4Context
+    title E-Commerce application
+
+    Person(person, "Customer", "Customer who is buying a product online")
+
+    System(webApp, "E-commerce Platform", "Allows customers to search, view and purchase products")
+    System_Ext(emailPlatform, "Email Platform", "Email marketing platform")
+    System_Ext(cdp, "Customer Data Platform (CDP)", "Customer profiling")
+    System(dwh, "Data Warehouse", "Reporting and data insights")
+
+    Rel(person, webApp, "Search, view and purchase products", "HTTPS")
+    Rel(webApp, cdp, "Send customer interaction and domain events to")
+    Rel(cdp, emailPlatform, "Send email using")
+    Rel(emailPlatform, person, "Sends email to", "SMTP")
+    Rel(webApp, dwh, "Domain events", "EventBridge")

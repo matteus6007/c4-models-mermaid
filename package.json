@@ -1,0 +1,9 @@
+{
+    "devDependencies": {
+        "@mermaid-js/mermaid-cli": "^10.2.4",
+        "husky": "^8.0.0"
+    },
+    "scripts": {
+        "prepare": "husky install"
+    }
+}
